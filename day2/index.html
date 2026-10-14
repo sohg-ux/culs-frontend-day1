@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive, accessible guide to a calm day in Prague.">
+    <title>Prague in a Day | Hasnat Abu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Prague in a Day home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>Prague in a Day</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#route">Route</a></li>
+          <li><a href="#places">Places</a></li>
+          <li><a href="#tips">Tips</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A slow city guide</p>
+          <h1 id="hero-title">One memorable day in Prague</h1>
+          <p class="hero-intro">
+            Follow a simple walking route from the Old Town to Prague Castle,
+            with space for coffee, views and the city’s quieter corners.
+          </p>
+          <a class="button" href="#places">Explore the stops</a>
+        </div>
+        <figure class="hero-art">
+          <img src="images/prague-skyline.svg" alt="Illustrated Prague skyline with bridge, towers and a tram">
+          <figcaption>A lightweight SVG illustration created for this page.</figcaption>
+        </figure>
+      </section>
+
+      <section class="route-section" id="route" aria-labelledby="route-title">
+        <div class="section-heading">
+          <p class="eyebrow">Suggested route</p>
+          <h2 id="route-title">Four stops, one relaxed day</h2>
+          <p>Start early, walk at your own pace and use tram 22 if the castle hill feels too steep.</p>
+        </div>
+        <ol class="timeline">
+          <li><span>09:00</span><strong>Old Town Square</strong></li>
+          <li><span>11:00</span><strong>Charles Bridge</strong></li>
+          <li><span>13:30</span><strong>Kampa Island</strong></li>
+          <li><span>16:00</span><strong>Prague Castle</strong></li>
+        </ol>
+      </section>
+
+      <section class="places-section" id="places" aria-labelledby="places-title">
+        <div class="section-heading">
+          <p class="eyebrow">Loaded from JSON</p>
+          <h2 id="places-title">Choose your next stop</h2>
+          <p id="places-description">Filter the places by the kind of experience you want.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter places">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="history" aria-pressed="false">History</button>
+          <button class="filter-button" type="button" data-filter="view" aria-pressed="false">Views</button>
+          <button class="filter-button" type="button" data-filter="relax" aria-pressed="false">Relax</button>
+        </div>
+
+        <p class="status" id="places-status" role="status" aria-live="polite">Loading places…</p>
+        <div class="place-grid" id="place-grid" aria-describedby="places-description"></div>
+      </section>
+
+      <aside class="tips-section" id="tips" aria-labelledby="tips-title">
+        <div>
+          <p class="eyebrow">Good to know</p>
+          <h2 id="tips-title">Small choices make a better day</h2>
+        </div>
+        <ul class="tip-list">
+          <li><strong>Wear comfortable shoes.</strong> Prague’s historic centre has many cobblestones.</li>
+          <li><strong>Carry a refillable bottle.</strong> Take regular breaks, especially in warm weather.</li>
+          <li><strong>Respect the neighbourhood.</strong> Keep noise low in residential streets.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>Day 2 Frontend Development project by <strong>Hasnat Abu</strong>.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>

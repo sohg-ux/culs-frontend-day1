@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title description">
+  <title id="title">Prague skyline illustration</title>
+  <desc id="description">A stylised sunset over Prague with towers, Charles Bridge, the Vltava river and a red tram.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8dca1"/>
+      <stop offset="1" stop-color="#f5a98b"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#98c9c0"/>
+      <stop offset="1" stop-color="#b8ddd6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="620" rx="32" fill="url(#sky)"/>
+  <circle cx="715" cy="135" r="63" fill="#fff4c9" opacity=".92"/>
+  <path d="M0 386C150 345 265 374 410 355c152-20 281-72 490-28v293H0Z" fill="#d9e5d9"/>
+  <path d="M0 463c161-35 294-16 445-7 181 11 287-11 455-46v210H0Z" fill="url(#water)"/>
+
+  <g fill="#284f43">
+    <path d="M87 353h62v111H87z"/>
+    <path d="M80 353h76l-38-77z"/>
+    <path d="M110 242h16v55h-16z"/>
+    <path d="M184 325h86v139h-86z"/>
+    <path d="M175 325h104l-52-94z"/>
+    <path d="M219 205h16v56h-16z"/>
+    <path d="M650 313h72v151h-72z"/>
+    <path d="M641 313h90l-45-105z"/>
+    <path d="M678 175h16v65h-16z"/>
+    <path d="M747 341h93v123h-93z"/>
+    <path d="M761 290h17v51h-17zM808 272h17v69h-17z"/>
+    <path d="m747 341 23-61 18 61zm45 0 25-80 23 80z"/>
+  </g>
+
+  <g fill="#f7dfac">
+    <rect x="105" y="374" width="18" height="28" rx="9"/>
+    <rect x="214" y="351" width="25" height="37" rx="12"/>
+    <rect x="675" y="344" width="22" height="34" rx="11"/>
+    <rect x="767" y="369" width="19" height="28" rx="9"/>
+    <rect x="806" y="369" width="19" height="28" rx="9"/>
+  </g>
+
+  <path d="M18 456h864" fill="none" stroke="#17312b" stroke-width="18"/>
+  <path d="M58 456c0-55 44-99 99-99s99 44 99 99m42 0c0-55 44-99 99-99s99 44 99 99m42 0c0-55 44-99 99-99s99 44 99 99" fill="none" stroke="#17312b" stroke-width="18"/>
+
+  <g transform="translate(303 399)">
+    <rect width="173" height="70" rx="15" fill="#d95545"/>
+    <path d="M25 16h119v27H25z" fill="#eaf5ef"/>
+    <path d="M63 16v27m40-27v27" stroke="#789b91" stroke-width="5"/>
+    <circle cx="43" cy="70" r="14" fill="#17312b"/>
+    <circle cx="134" cy="70" r="14" fill="#17312b"/>
+    <path d="m76 0 22-25h28" fill="none" stroke="#17312b" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#fff" opacity=".6">
+    <ellipse cx="170" cy="521" rx="105" ry="12"/>
+    <ellipse cx="660" cy="549" rx="150" ry="15"/>
+  </g>
+</svg>

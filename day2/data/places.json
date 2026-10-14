@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Old Town Square",
+    "category": "history",
+    "categoryLabel": "History",
+    "duration": "60–90 min",
+    "description": "Begin among medieval façades and look for the Astronomical Clock before the square becomes busy."
+  },
+  {
+    "name": "Charles Bridge",
+    "category": "view",
+    "categoryLabel": "City view",
+    "duration": "45–60 min",
+    "description": "Cross the Vltava slowly and enjoy views of the river, Malá Strana and the castle above the rooftops."
+  },
+  {
+    "name": "Kampa Island",
+    "category": "relax",
+    "categoryLabel": "Relax",
+    "duration": "60 min",
+    "description": "Pause beside the water, walk through the park and explore the quiet lanes around the old mill wheel."
+  },
+  {
+    "name": "Prague Castle",
+    "category": "history",
+    "categoryLabel": "History",
+    "duration": "2–3 hours",
+    "description": "Finish with courtyards, Gothic architecture and a wide evening panorama over the city."
+  }
+]
