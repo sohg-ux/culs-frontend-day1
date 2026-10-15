@@ -1,65 +1,68 @@
-# The Little Herb Garden
+# The Little Herb Garden — Day 3
 
-A small website for day 1 of **Frontend Development**.
+A responsive, accessible single-page herb guide created by **Hasnat Abu** for Day 3 of Contemporary Frontend Development.
 
-Fixed and verified by Hasnat Abu.
+Live site: <https://sohg-ux.github.io/culs-frontend-day1/>
 
-## What you need
+## Day 3 requirements covered
 
-- a GitHub account
-- Git
-- an editor
-- a browser (Firefox recommended)
-- [Node.js](https://nodejs.org/) (the LTS version), which brings `npx`
+- **React to input:** live herb search and a “favourites only” filter.
+- **Handle events:** input, change, click, hash, online/offline and keyboard events.
+- **Maintain state:** selected herb, search query, filter and favourites are held in JavaScript state.
+- **Modify the DOM:** the navigation, status and herb article are built dynamically.
+- **Fetch data:** each herb is loaded from its own `data/<herb>.json` file.
+- **Communicate with a server:** the page uses `fetch()` and explains when it is opened without a web server.
 
-## Get your copy
+## One HTML page, many herb URLs
 
-1. **Fork** this repository to your GitHub account.
-2. **Clone your fork**, not this repository:
+Only `index.html` is needed. The URL hash selects the herb, for example `index.html#basil`, `index.html#rosemary` or `index.html#chamomile`. Changing the hash loads the matching JSON file and rebuilds the article without a page reload.
 
-   ```sh
-   git clone https://github.com/<your-name>/culs-frontend-day1.git
-   cd culs-frontend-day1
-   ```
+## JSON schema
 
-## Run it
+Every herb file has the same fields:
 
-Start a small web server in the project folder:
+| Field | Purpose |
+| --- | --- |
+| `slug` | URL and file identifier |
+| `name`, `latin` | Common and scientific names |
+| `summary`, `use` | Description and culinary/garden uses |
+| `life` | Annual or perennial |
+| `sun`, `water`, `harvest` | Growing guidance |
+| `difficulty` | Simple care level |
+| `colour` | Accent colour used by the interface |
+
+`data/herbs.json` is a small manifest used to build the herb navigation. The full records live in separate files such as `data/basil.json`.
+
+## Reliability and accessibility
+
+- Unknown herb hashes display a helpful recovery message.
+- Missing or malformed JSON files display an error instead of leaving a blank page.
+- A missing manifest, offline state and `file://` use are handled.
+- All features work with a keyboard; `/` focuses search and `Escape` clears it.
+- Semantic landmarks, visible focus states, labels, live status messages and reduced-motion support are included.
+
+## Chosen feature: favourites
+
+The star button saves favourite herbs in `localStorage`. The “favourites only” checkbox filters the menu, and favourites remain after reloading the page.
+
+## Run locally
 
 ```sh
 npx serve
 ```
 
-The first time, `npx` asks whether to install `serve`. Answer `y`.
+Open the local address printed by the command. Do not double-click `index.html`, because browsers block `fetch()` from a `file://` page.
 
-Then open the address it prints, usually <http://localhost:3000>.
-Stop the server with `Ctrl+C`.
-
-Do not open `index.html` by double-clicking it. A `file://` page is not the Web.
-
-## Your mission
-
-Something is wrong. Several things, in fact.
-
-1. Inspect before you change anything: the page, the Console, the Network panel, the Inspector.
-2. Pick one problem and find out why it happens.
-3. Fix it, reload, verify.
-4. Commit that one fix, with a message that says what you fixed.
-5. Repeat.
-
-You are done when:
-
-- the Console shows no unexplained errors
-- the Network panel shows no missing files
-- every link on the page goes where it says
-- `git status` is clean, and `git push` has sent your commits to GitHub
-
-## The project
+## Project structure
 
 ```text
-index.html    the page
-style.css     how it looks
-app.js        what it does
-data/         the herbs, as JSON
-images/       the logo and a picture
+index.html                 semantic application shell
+style.css                  responsive and accessible layout
+app.js                     state, events, fetch and DOM rendering
+data/herbs.json            herb manifest
+data/<herb>.json           one data file per herb
+images/                    logo and garden illustration
+day1/                      preserved Day 1 project
+day2/                      preserved Day 2 project
+.github/workflows/         GitHub Pages deployment
 ```

@@ -3,56 +3,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore eight garden herbs through an accessible, data-driven JavaScript application.">
   <title>The Little Herb Garden</title>
   <link rel="icon" href="images/Logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#explorer">Skip to the herb explorer</a>
   <header class="site-header">
-    <img class="logo" src="images/Logo.svg" alt="" width="48" height="48">
-    <p class="site-name">The Little Herb Garden</p>
-    <nav>
+    <a class="brand" href="#basil" aria-label="The Little Herb Garden home">
+      <img src="images/Logo.svg" alt="" width="48" height="48">
+      <span>The Little Herb Garden</span>
+    </a>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="#herbs">Herbs</a></li>
-        <li><a href="#visit">Visit</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#basil">Explore</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="day1/">Day 1</a></li>
+        <li><a href="day2/">Day 2</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <div>
-        <h1>Herbs you can smell, taste and grow</h1>
-        <p>A small garden with herbs for the kitchen, for tea and for the bees.
-          See <a href="#herbs">what grows here</a></p>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Eight herbs · one living page</p>
+        <h1 id="page-title">Find a herb for your kitchen, tea or garden</h1>
+        <p>Choose a herb, search by name or save favourites. Each view is built by JavaScript from a separate JSON file.</p>
+        <a class="primary-link" href="#basil">Start with basil</a>
       </div>
-      <img class="hero" src="images/garden.svg" alt="Two raised beds full of herbs, with a bee">
+      <img src="images/garden.svg" alt="Two raised beds full of herbs with a bee flying above them">
     </section>
 
-    <section id="herbs">
-      <h2>What grows here</h2>
-      <p class="count">Loading the herbs…</p>
-      <ul id="herbs-list" class="cards"></ul>
+    <section class="explorer" id="explorer" aria-labelledby="explorer-title">
+      <div class="explorer-heading">
+        <div>
+          <p class="eyebrow">Interactive garden</p>
+          <h2 id="explorer-title">Choose your herb</h2>
+        </div>
+        <p class="connection" id="connection-status" role="status">Checking connection…</p>
+      </div>
+
+      <div class="search-panel">
+        <label for="herb-search">Search herbs</label>
+        <input id="herb-search" name="herb-search" type="search" placeholder="Try basil or rosemary" autocomplete="off">
+        <label class="checkbox-label" for="favourites-only">
+          <input id="favourites-only" type="checkbox">
+          Show favourites only
+        </label>
+        <p class="shortcut-hint">Keyboard tip: press <kbd>/</kbd> to search.</p>
+      </div>
+
+      <div class="explorer-layout">
+        <nav class="herb-menu" aria-label="Herbs">
+          <p class="menu-label">Garden list</p>
+          <ul id="herb-list"></ul>
+          <p class="empty-list" id="empty-list" hidden>No herbs match your search.</p>
+        </nav>
+        <div class="detail-area">
+          <p class="app-status" id="app-status" role="status" aria-live="polite">Loading the garden…</p>
+          <article class="herb-detail" id="herb-detail" aria-live="polite" aria-busy="true"></article>
+        </div>
+      </div>
+
+      <noscript>
+        <p class="error-panel">JavaScript is required for this Day 3 application. Please enable it and reload the page.</p>
+      </noscript>
     </section>
 
-    <section id="visit">
-      <h2>Visit</h2>
-      <p>The garden is open every day from sunrise to sunset.
-        Bring a friend, rub a leaf between your fingers, and leave the bees alone.</p>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>The garden is made up, and so is this site: a practice project for
-        <a href="https://github.com/pepe/culs-frontend-day1">Frontend Development, day 1</a>.</p>
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
+      <div>
+        <p class="eyebrow">Under the leaves</p>
+        <h2 id="how-title">One page, many data files</h2>
+      </div>
+      <ol>
+        <li><strong>The URL hash chooses a herb.</strong> For example, <code>#basil</code> identifies basil.</li>
+        <li><strong>JavaScript fetches its JSON.</strong> The browser requests <code>data/basil.json</code>.</li>
+        <li><strong>The DOM is updated.</strong> The same HTML page becomes a new herb view without reloading.</li>
+      </ol>
     </section>
   </main>
 
   <footer>
-    <p>Made with HTML, CSS and JavaScript.
-      <a href="https://developer.mozilla.org/">MDN</a> helped.</p>
+    <p>Day 3 Frontend Development project by <strong>Hasnat Abu</strong>.</p>
+    <a href="https://github.com/sohg-ux/culs-frontend-day1">View the repository</a>
   </footer>
 </body>
 </html>
