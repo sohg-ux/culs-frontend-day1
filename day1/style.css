@@ -1,0 +1,128 @@
+/* The Little Herb Garden */
+
+:root {
+  --leaf: #2f6b3a;
+  --leaf-light: #e7f1e4;
+  --soil: #5b4636;
+  --paper: #fbfaf5;
+  --ink: #1f2420;
+  --line: #cfdccb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+a {
+  color: var(--leaf);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--leaf);
+  color: white;
+}
+
+.site-header a {
+  color: white;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.intro {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 40rem) {
+  .intro {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: white;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.latin {
+  margin: 0 0 0.5rem;
+  font-style: italic;
+  color: var(--soil);
+}
+
+.life {
+  display: inline-block;
+  margin: 0;
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--leaf-light);
+  font-size: 0.875rem;
+}
+
+footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--soil);
+}
